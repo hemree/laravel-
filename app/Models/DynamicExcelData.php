@@ -1,14 +1,18 @@
 <?php
 
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ExcelData extends Model
+class DynamicExcelData extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['column1', 'column2'];
+    protected $guarded = [];
+
+    public static function create(array $array)
+    {
+
+    }
 }

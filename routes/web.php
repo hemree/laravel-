@@ -1,6 +1,12 @@
 <?php
 
-use App\Http\Controllers\ExcelDataController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DynamicExcelController;
 
-Route::get('/', [ExcelDataController::class, 'index']);
-Route::post('/import', [ExcelDataController::class, 'import'])->name('import');
+
+Route::get('/', function () {
+    return redirect('/upload');
+});
+
+Route::get('/upload', [DynamicExcelController::class, 'index']);
+Route::post('/upload', [DynamicExcelController::class, 'upload'])->name('upload');
